@@ -16,3 +16,45 @@ year.addEventListener('click', () => {
     year.classList.add("botona")
     month.classList.remove("botona")
 });
+
+
+var totalChecked = 0;
+const priceElement = document.querySelector('.price');
+
+
+const checkboxes = document.querySelectorAll('.feature-checkbox');
+
+checkboxes.forEach(checkbox => {
+  checkbox.addEventListener('change', function() {
+    if (this.checked) {
+      totalChecked += 10;
+    } else {
+      totalChecked -= 10;
+    }
+    priceElement.textContent = "$" + totalChecked;
+    console.log('Total checked:', totalChecked);
+   
+  });
+});
+
+        // TOTAL-PRICE 
+
+var totalPrice = 0;
+const pay1 = document.getElementById('#1');
+const pay2 = document.getElementById('#2');
+const pay3 = document.getElementById('#3');
+
+
+pay1.addEventListener('click', () => {
+    totalPrice = 0;
+    console.log(0)
+});
+
+pay2.addEventListener('click', () => {
+    totalPrice = 1;
+});
+
+pay3.addEventListener('click', () => {
+    totalPrice = totalChecked;
+    console.log(totalChecked)
+});
